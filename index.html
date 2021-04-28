@@ -1,0 +1,572 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/zenburn.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                __C/C++ : a hardware perspective__                    
+                        </textarea>
+                   </section>
+
+                 <section data-background-iframe="https://www.youtube.com/embed/CYvJPra7Ebk"></section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                        ```
+                                unsigned int a;
+                                unsigned int *b;
+                                b = &a;
+                        ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               Memory-mapped hardware 
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/tinypico.jpg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/ESP32_Function_Block_Diagram.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/esp32_address_map.png)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/esp32_gpio_registers.png)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                        ```
+                        unsigned int *gpio_w1ts = (unsigned int*)(0x3FF44008);
+
+                        *gpio_w1ts = 1; // Set GPIO pin 0 HIGH
+                                        // 1 = ......000001
+
+                        *gpio_w1ts = 2; // Set GPIO pin 1 HIGH
+                                        // 2 = ......000010
+
+                        *gpio_w1ts = 4; // Set GPIO pin 2 HIGH
+                                        // 4 = ......000100
+
+
+                        ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                "I don't care about hardware. I'm not a computer/electronic engineer." -- _a CS scholar_                  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                "I don't care about hardware. I'm not a computer/electronic engineer." -- _a CS scholar_                  
+
+                                __You should if you care about performance.__
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                C/C++ gives us a lot of control over memory                   
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/mem_pyramid.svg)
+                        </textarea>
+                   </section>
+
+                
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_0.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_1.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_2.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_3.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_4.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                Why is having control of memory management important?                  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                Why is having control of memory management important?                  
+
+                                __Big difference in latency between HIT and MISS__
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_4.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/CoFo_2_Library.png)
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_2.svg)
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/CoFo_2_bridgend.png)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/cache_2.svg)
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/hdd.png)
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/earth_mars.svg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               With C/C++ we have much more control over this memory hierarchy 
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               Example: Matrix-Matrix Multiplication  
+                        </textarea>
+                   </section>
+                 
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_0.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_1.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_2.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_3.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_4.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_4.svg)  
+                               ```
+                                float A[N][N];
+                                float B[N][N];
+                                float C[N][N];
+                               ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_4.svg)  
+                               ```
+                                float A[N][N];
+                                float B[N][N];
+                                float C[N][N];
+
+                               for(int i=0; i<N; i++) {
+                                   for(int j=0; j<N; j++) {
+
+                                   }
+                               }
+                               ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_4.svg)  
+                               ```
+                                float A[N][N];
+                                float B[N][N];
+                                float C[N][N];
+
+                               for(int i=0; i<N; i++) {
+                                   for(int j=0; j<N; j++) {
+                                      for(int k=0; k<N; k++) {
+                                
+                                      } 
+                                   }
+                               }
+                               ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/mmm_eg_4.svg)  
+                               ```
+                                float A[N][N];
+                                float B[N][N];
+                                float C[N][N];
+
+                               for(int i=0; i<N; i++) {
+                                   for(int j=0; j<N; j++) {
+                                      for(int k=0; k<N; k++) {
+                                          C[i][j] += A[i][k] * B[k][j];             
+                                      } 
+                                   }
+                               }
+                               ```
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               __Experiment__  
+                        </textarea>
+                   </section>
+                               
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/2d_array_colourful.svg)  
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/memory_layout.svg)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/64B_whether_you_like_it_or_not.svg)  
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_0.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_0_MISS.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_1_HIT.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_2_HIT.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_15_MISS.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_order_change_0.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_order_change_MISS_0.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_order_change_MISS_1.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_order_change_MISS_2.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/iteration_order_change_MISS_3.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               Back to matrix-matrix multiplication  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/exect.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               __order:__  i, j ,k
+
+                               _i=1, j=2, k=0..N_ 
+
+                               ![](imgs/ijk.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               __order:__  i, k, j
+
+                               _i=1, j=0..N, k=2_ 
+
+                               ![](imgs/ikj.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               __order:__  k, j, i
+
+                               _i=0..N, j=1, k=2_ 
+                               ![](imgs/kji.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/exect.png)  
+                        </textarea>
+                   </section>
+
+
+                 <section data-transition="none" data-background-image="imgs/cachegrind.gif" data-background-size="contain"></section>
+
+                 <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                <img style="float: right;" src="imgs/hitmissrate.png">
+
+|     | MISS  | HIT   |
+|-----|-------|-------|
+| ijk | 7.2%  | 92.8% |
+| ikj | 0.9%  | 99.1% |
+| kji | 14.3% | 85.7% |
+
+                        </textarea>
+
+                 </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               With C/C++ we have __control__ over: 
+                               * How we arrage our data in memory
+                               * How we iterate over our data
+
+                               ...comes with some responsibility
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/segfault_smaller.jpg)  
+                        </textarea>
+                   </section>
+
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               C/C++ can describe hardware  
+                               ![](imgs/vivadoHLS.jpeg)
+                        </textarea>
+                   </section>
+
+                 <section data-transition="none" data-background-image="imgs/dot_product.png" data-background-size="contain"></section>
+                 <section data-transition="none" data-background-image="imgs/comp_arch.png" data-background-size="contain"></section>
+                 <section data-transition="none" data-background-image="imgs/dot_product_hardware.png" data-background-size="contain"></section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                __conclusion__
+
+                                * C/C++ isn't going anywhere... 
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/Linus-Torvalds-2012.jpg)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                __conclusion__
+
+                                * C/C++ isn't going anywhere... 
+                                * Pointers are essential for interfacing with hardware
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                ![](imgs/esp32_gpio_registers.png)
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                __conclusion__
+
+                                * C/C++ isn't going anywhere... 
+                                * Pointers are essential for interfacing with hardware
+                                * Explicit memory management is powerful 
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                               ![](imgs/exect.png)  
+                        </textarea>
+                   </section>
+
+                   <section data-transition="none" data-markdown>
+                        <textarea data-template>
+                                __conclusion__
+
+                                * C/C++ isn't going anywhere... 
+                                * Pointers are essential for interfacing with hardware
+                                * Explicit memory management is powerful 
+                                * C/C++ can describe custom hardware
+                        </textarea>
+                   </section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                
+                autoPlayMedia: true,
+
+                viewDistance: 3,
+
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
